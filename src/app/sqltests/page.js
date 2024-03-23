@@ -1,7 +1,7 @@
-import GetUser from "../components/user-sql";
-// const user = await GetUser();
+import GetProductReviews from "../components/product-reviews-sql";
+// const productReviews = await GetProductReviews();
 
-// console.log(user);
+// console.log(productAndReviews);
 export default async function Home() {
   return (
     <main>
