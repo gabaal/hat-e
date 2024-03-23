@@ -1,7 +1,7 @@
 import GetUser from "../components/user-sql";
-const user = await GetUser();
+// const user = await GetUser();
 
-console.log(user);
+// console.log(user);
 export default async function Home() {
   return (
     <main>
