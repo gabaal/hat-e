@@ -1,4 +1,4 @@
-import GetProductReviews from "../components/product-reviews-sql";
+// import GetProductReviews from "../components/product-reviews-sql";
 // const productReviews = await GetProductReviews();
 
 // console.log(productAndReviews);
