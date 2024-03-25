@@ -9,7 +9,7 @@ export default async function Page({ params }) {
   ).rows[0];
 
   return (
-    <div key={cap.id}>
+    <div key={cap.product_id}>
       <div>
         <h1>{cap.name}</h1>
       </div>
