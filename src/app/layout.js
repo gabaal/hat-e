@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/NavBar";
 import { ClerkProvider } from "@clerk/nextjs";
+import Head from "next/head";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,12 +15,29 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body className={inter.className}>
-          <Navbar></Navbar>
-          {children}
-        </body>
-      </html>
+      <Head>
+        <link rel="preconnect" href="https://app.snipcart.com" />
+        <link rel="preconnect" href="https://cdn.snipcart.com" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.css"
+        />
+      </Head>
+      <div className={inter.className}>
+        <Navbar />
+        {children}
+        <footer>
+          <script
+            async
+            src="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.js"
+          />
+          <div
+            hidden
+            id="snipcart"
+            data-api-key="NDY5YzQzODMtMTUxNi00ZDU3LTk2ZjEtMDYwMzg3OGEwYzU0NjM4NDY5NzMzNzkwMDkxNzQw"
+          />
+        </footer>
+      </div>
     </ClerkProvider>
   );
 }
