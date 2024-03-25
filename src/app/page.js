@@ -1,6 +1,6 @@
 import Image from "next/image";
 import GetProducts from "./components/products-sql";
-const products = await GetProducts()
+// const products = await GetProducts()
 
 
 export default async function Home() {
