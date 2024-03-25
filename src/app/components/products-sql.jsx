@@ -7,6 +7,18 @@ export default async function GetProducts() {
   return products;
 }
 
+export async function GetProductsforJSON() {
+  const products = await sql`SELECT 
+  product_id AS data-item-id,
+  name AS data-item-name,
+  description AS data-item-description,
+  image_url AS data-item-image,
+  price AS data-item-price
+FROM products`;
+  console.log(products);
+  return products;
+}
+
 //Get Product by ID
 export async function GetProduct({ params }) {
   const product_id = params.id; // Assuming you're passing the product_id in params
