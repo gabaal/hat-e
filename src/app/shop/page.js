@@ -1,4 +1,4 @@
-import products from "../SCproducts.json";
+import products from "../products.json";
 import Image from "next/image";
 export default function page() {
   console.log(products);
