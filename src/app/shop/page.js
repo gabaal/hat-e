@@ -1,5 +1,6 @@
 import products from "../SCproducts.json";
 import Image from "next/image";
+import Link from "next/link";
 export default function page() {
   console.log(products);
   return (
@@ -14,7 +15,9 @@ export default function page() {
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <p>${product.price}</p>
-            <Image src={product.image_url} height={400} width={300} />
+            <Link href={`shop/${product.product_id}`}>
+              <Image src={product.image_url} height={400} width={300} />
+            </Link>
             <p>
               <button
                 className="snipcart-add-item"
