@@ -6,6 +6,7 @@ import { auth } from "@clerk/nextjs";
 
 export default function Navbar() {
   const { userId } = auth();
+
   return (
     <>
       <nav className="bg-green-300 py-2">
