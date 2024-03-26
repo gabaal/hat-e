@@ -10,9 +10,9 @@ export default async function productJSON() {
 
   // Convert products data to JSON
   const productsJSON = JSON.stringify(products.rows, null, 2);
-console.log(productsJSON);
+// console.log(productsJSON);
   // Write JSON data to a file
-fs.writeFileSync('src/apSCproducts.json', productsJSON);
+fs.writeFileSync('src/app/SCproducts.json', productsJSON);
 
   return (
     <div>

@@ -1,128 +1,128 @@
 [
   {
-    "product_id": 15,
-    "name": "Classic Fedora",
-    "description": "A stylish and timeless fedora hat for any occasion.",
-    "image_url": "https://m.media-amazon.com/images/I/81NFN4565cL._AC_SX569_.jpg",
-    "price": "39.99",
-    "stock_quantity": 50,
-    "category_id": 2
+    "product_id": 22,
+    "product_name": "Fedora Hat",
+    "product_description": "A trendy and fashionable fedora hat to elevate your style.",
+    "product_image_url": "https://m.media-amazon.com/images/I/617PPrFTCLL._AC_SX569_.jpg",
+    "product_price": "39.99",
+    "product_stock": 35,
+    "average_rating": "4.0"
   },
   {
     "product_id": 16,
-    "name": "Baseball Cap",
-    "description": "A comfortable and casual baseball cap for everyday wear.",
-    "image_url": "https://m.media-amazon.com/images/I/71ROIm2faXL._AC_SX569_.jpg",
-    "price": "19.99",
-    "stock_quantity": 100,
-    "category_id": 1
+    "product_name": "Baseball Cap",
+    "product_description": "A comfortable and casual baseball cap for everyday wear.",
+    "product_image_url": "https://m.media-amazon.com/images/I/71ROIm2faXL._AC_SX569_.jpg",
+    "product_price": "19.99",
+    "product_stock": 100,
+    "average_rating": "4.5"
   },
   {
-    "product_id": 17,
-    "name": "Beanie Hat",
-    "description": "A cozy and warm beanie hat perfect for cold weather.",
-    "image_url": "https://m.media-amazon.com/images/I/8196TiFItCL._AC_SX679_.jpg",
-    "price": "29.99",
-    "stock_quantity": 75,
-    "category_id": 4
-  },
-  {
-    "product_id": 18,
-    "name": "Straw Hat",
-    "description": "A lightweight and breathable straw hat ideal for sunny days.",
-    "image_url": "https://m.media-amazon.com/images/I/81m1pbwkjXL._AC_SX569_.jpg",
-    "price": "24.99",
-    "stock_quantity": 50,
-    "category_id": 2
-  },
-  {
-    "product_id": 19,
-    "name": "Bucket Hat",
-    "description": "A trendy and versatile bucket hat to add some flair to your look.",
-    "image_url": "https://m.media-amazon.com/images/I/51Q5iTBpa7L._AC_SX679_.jpg",
-    "price": "34.99",
-    "stock_quantity": 60,
-    "category_id": 3
-  },
-  {
-    "product_id": 20,
-    "name": "Trilby Hat",
-    "description": "A sleek and stylish trilby hat for a sophisticated look.",
-    "image_url": "https://m.media-amazon.com/images/I/71buNXvJWbL._AC_SX569_.jpg",
-    "price": "44.99",
-    "stock_quantity": 30,
-    "category_id": 2
-  },
-  {
-    "product_id": 21,
-    "name": "Panama Hat",
-    "description": "A classic and elegant Panama hat perfect for sunny days.",
-    "image_url": "https://m.media-amazon.com/images/I/61twiT2Lr+L._AC_SX569_.jpg",
-    "price": "49.99",
-    "stock_quantity": 25,
-    "category_id": 2
-  },
-  {
-    "product_id": 22,
-    "name": "Fedora Hat",
-    "description": "A trendy and fashionable fedora hat to elevate your style.",
-    "image_url": "https://m.media-amazon.com/images/I/617PPrFTCLL._AC_SX569_.jpg",
-    "price": "39.99",
-    "stock_quantity": 35,
-    "category_id": 2
-  },
-  {
-    "product_id": 23,
-    "name": "Snapback Cap",
-    "description": "A cool and adjustable snapback cap for a sporty vibe.",
-    "image_url": "https://m.media-amazon.com/images/I/81boyelX+US._AC_SX569_.jpg",
-    "price": "29.99",
-    "stock_quantity": 45,
-    "category_id": 6
-  },
-  {
-    "product_id": 24,
-    "name": "Beret Hat",
-    "description": "A chic and sophisticated beret hat for a touch of French flair.",
-    "image_url": "https://m.media-amazon.com/images/I/61mqaFT5z+L._AC_SX569_.jpg",
-    "price": "34.99",
-    "stock_quantity": 20,
-    "category_id": 5
-  },
-  {
-    "product_id": 25,
-    "name": "Boater Hat",
-    "description": "A classic and timeless boater hat for a refined and dapper look.",
-    "image_url": "https://m.media-amazon.com/images/I/61Y6zjgVmnL._AC_SL1000_.jpg",
-    "price": "54.99",
-    "stock_quantity": 15,
-    "category_id": 3
+    "product_id": 15,
+    "product_name": "Classic Fedora",
+    "product_description": "A stylish and timeless fedora hat for any occasion.",
+    "product_image_url": "https://m.media-amazon.com/images/I/81NFN4565cL._AC_SX569_.jpg",
+    "product_price": "39.99",
+    "product_stock": 50,
+    "average_rating": "4.5"
   },
   {
     "product_id": 26,
-    "name": "Pork Pie Hat",
-    "description": "A unique and stylish pork pie hat for a distinctive appearance.",
-    "image_url": "https://m.media-amazon.com/images/I/61f9K+odJhL._AC_SX679_.jpg",
-    "price": "49.99",
-    "stock_quantity": 20,
-    "category_id": 6
+    "product_name": "Pork Pie Hat",
+    "product_description": "A unique and stylish pork pie hat for a distinctive appearance.",
+    "product_image_url": "https://m.media-amazon.com/images/I/61f9K+odJhL._AC_SX679_.jpg",
+    "product_price": "49.99",
+    "product_stock": 20,
+    "average_rating": null
   },
   {
-    "product_id": 27,
-    "name": "Cowboy Hat",
-    "description": "A rugged and Western-style cowboy hat for a bold statement.",
-    "image_url": "https://m.media-amazon.com/images/I/71wD7jVGZ0L._AC_SX569_.jpg",
-    "price": "59.99",
-    "stock_quantity": 40,
-    "category_id": 5
+    "product_id": 24,
+    "product_name": "Beret Hat",
+    "product_description": "A chic and sophisticated beret hat for a touch of French flair.",
+    "product_image_url": "https://m.media-amazon.com/images/I/61mqaFT5z+L._AC_SX569_.jpg",
+    "product_price": "34.99",
+    "product_stock": 20,
+    "average_rating": "3.7"
+  },
+  {
+    "product_id": 19,
+    "product_name": "Bucket Hat",
+    "product_description": "A trendy and versatile bucket hat to add some flair to your look.",
+    "product_image_url": "https://m.media-amazon.com/images/I/51Q5iTBpa7L._AC_SX679_.jpg",
+    "product_price": "34.99",
+    "product_stock": 60,
+    "average_rating": "4.5"
+  },
+  {
+    "product_id": 25,
+    "product_name": "Boater Hat",
+    "product_description": "A classic and timeless boater hat for a refined and dapper look.",
+    "product_image_url": "https://m.media-amazon.com/images/I/61Y6zjgVmnL._AC_SL1000_.jpg",
+    "product_price": "54.99",
+    "product_stock": 15,
+    "average_rating": "5.0"
+  },
+  {
+    "product_id": 21,
+    "product_name": "Panama Hat",
+    "product_description": "A classic and elegant Panama hat perfect for sunny days.",
+    "product_image_url": "https://m.media-amazon.com/images/I/61twiT2Lr+L._AC_SX569_.jpg",
+    "product_price": "49.99",
+    "product_stock": 25,
+    "average_rating": "5.0"
+  },
+  {
+    "product_id": 17,
+    "product_name": "Beanie Hat",
+    "product_description": "A cozy and warm beanie hat perfect for cold weather.",
+    "product_image_url": "https://m.media-amazon.com/images/I/8196TiFItCL._AC_SX679_.jpg",
+    "product_price": "29.99",
+    "product_stock": 75,
+    "average_rating": "5.0"
   },
   {
     "product_id": 28,
-    "name": "Bucket Hat with Logo",
-    "description": "A trendy bucket hat with a logo design for a streetwear look.",
-    "image_url": "https://m.media-amazon.com/images/I/81QhJFqdN8L._AC_SX679_.jpg",
-    "price": "39.99",
-    "stock_quantity": 30,
-    "category_id": 3
+    "product_name": "Bucket Hat with Logo",
+    "product_description": "A trendy bucket hat with a logo design for a streetwear look.",
+    "product_image_url": "https://m.media-amazon.com/images/I/81QhJFqdN8L._AC_SX679_.jpg",
+    "product_price": "39.99",
+    "product_stock": 30,
+    "average_rating": null
+  },
+  {
+    "product_id": 20,
+    "product_name": "Trilby Hat",
+    "product_description": "A sleek and stylish trilby hat for a sophisticated look.",
+    "product_image_url": "https://m.media-amazon.com/images/I/71buNXvJWbL._AC_SX569_.jpg",
+    "product_price": "44.99",
+    "product_stock": 30,
+    "average_rating": "3.0"
+  },
+  {
+    "product_id": 18,
+    "product_name": "Straw Hat",
+    "product_description": "A lightweight and breathable straw hat ideal for sunny days.",
+    "product_image_url": "https://m.media-amazon.com/images/I/81m1pbwkjXL._AC_SX569_.jpg",
+    "product_price": "24.99",
+    "product_stock": 50,
+    "average_rating": "3.5"
+  },
+  {
+    "product_id": 27,
+    "product_name": "Cowboy Hat",
+    "product_description": "A rugged and Western-style cowboy hat for a bold statement.",
+    "product_image_url": "https://m.media-amazon.com/images/I/71wD7jVGZ0L._AC_SX569_.jpg",
+    "product_price": "59.99",
+    "product_stock": 40,
+    "average_rating": null
+  },
+  {
+    "product_id": 23,
+    "product_name": "Snapback Cap",
+    "product_description": "A cool and adjustable snapback cap for a sporty vibe.",
+    "product_image_url": "https://m.media-amazon.com/images/I/81boyelX+US._AC_SX569_.jpg",
+    "product_price": "29.99",
+    "product_stock": 45,
+    "average_rating": "5.0"
   }
 ]
