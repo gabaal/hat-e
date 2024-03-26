@@ -23,7 +23,7 @@ export default async function Page({ params }) {
         />
       )}
 
-      <h3>Price: £{cap.price}</h3>
+      <h3>Price: ${cap.price}</h3>
       <p>{cap.description}</p>
     </div>
   );
