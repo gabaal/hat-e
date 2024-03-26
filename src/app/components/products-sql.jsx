@@ -16,13 +16,14 @@ export async function GetProductsAndReviewsAvg() {
   products.image_url AS product_image_url,
   products.price AS product_price,
   products.stock_quantity AS product_stock,
-  ROUND(AVG(reviews.rating), 1) AS average_rating
-  FROM 
-    products
-  LEFT JOIN 
-    reviews ON products.product_id = reviews.product_id
-  GROUP BY 
-    products.product_id, products.name, products.description, products.image_url, products.price, products.stock_quantity;
+  COALESCE(ROUND(AVG(COALESCE(reviews.rating, 0)), 1), 0) AS average_rating
+FROM 
+  products
+LEFT JOIN 
+  reviews ON products.product_id = reviews.product_id
+GROUP BY 
+  products.product_id, products.name, products.description, products.image_url, products.price, products.stock_quantity;
+
 `;
   console.log(products);
   return products;
