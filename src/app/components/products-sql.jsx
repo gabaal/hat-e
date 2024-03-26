@@ -7,6 +7,30 @@ export default async function GetProducts() {
   return products;
 }
 
+export async function GetProductsAndReviewsAvg() { // Assuming you're passing the product_id in params
+  try {
+    const product =
+      await sql`SELECT 
+      products.product_id,
+      products.name AS product_name,
+      products.description AS product_description,
+      products.image_url AS product_image_url,
+      products.price AS product_price,
+      products.stock_quantity AS product_stock,
+      ROUND(AVG(reviews.rating), 1) AS average_rating
+  FROM 
+      products
+  LEFT JOIN 
+      reviews ON products.product_id = reviews.product_id
+  GROUP BY 
+      products.product_id, products.name, products.description, products.image_url, products.price, products.stock_quantity;`;
+    // console.log(product);
+    return product;
+  } catch (error) {
+    console.error("Error fetching product:", error);
+    throw error;
+  }
+}
 export async function GetProductsforJSON() {
   const products = await sql`SELECT 
   product_id AS data-item-id,

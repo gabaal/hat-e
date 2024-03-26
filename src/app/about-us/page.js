@@ -8,7 +8,7 @@ export default function page() {
         return (
           <div
             key={product.id}
-            className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+            className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 /home/gerald/softwareDev/week12/hat-e/src/app/sqltestsdark:hover:bg-gray-700"
           >
             <h3>{product.title}</h3>
             <p>{product.description}</p>
