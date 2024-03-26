@@ -7,14 +7,23 @@ export default async function GetProducts() {
   return products;
 }
 
-export async function GetProductsforJSON() {
-  const products = await sql`SELECT 
-  product_id AS data-item-id,
-  name AS data-item-name,
-  description AS data-item-description,
-  image_url AS data-item-image,
-  price AS data-item-price
-FROM products`;
+export async function GetProductsAndReviewsAvg() {
+  const products = await sql`
+  SELECT 
+  products.product_id,
+  products.name AS product_name,
+  products.description AS product_description,
+  products.image_url AS product_image_url,
+  products.price AS product_price,
+  products.stock_quantity AS product_stock,
+  ROUND(AVG(reviews.rating), 1) AS average_rating
+  FROM 
+    products
+  LEFT JOIN 
+    reviews ON products.product_id = reviews.product_id
+  GROUP BY 
+    products.product_id, products.name, products.description, products.image_url, products.price, products.stock_quantity;
+`;
   console.log(products);
   return products;
 }
