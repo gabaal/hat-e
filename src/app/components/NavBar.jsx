@@ -36,6 +36,12 @@ export default function Navbar() {
             >
               All hats
             </Link>
+            <Link
+              href="/contact-us"
+              className="hover:text-gray-900 hover:shadow-md rounded-md px-4 py-2 bg-[#AAE292] text-black hover:bg-gray-300"
+            >
+              Contact Us
+            </Link>
             <div className="hover:text-gray-900 hover:shadow-md rounded-md px-4 py-2 bg-blue-500 hover:bg-gray-300">
               {userId ? <UserButton /> : <SignInButton />}
             </div>
