@@ -5,7 +5,6 @@ import productsArray from "../../SCproducts.json";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { GetProductReviews } from "@/app/components/products-sql";
 import { SignedIn } from "@clerk/nextjs";
-import ReviewsForm from "@/app/components/ReviewsForm";
 
 export default async function Page({ params }) {
   // form function
@@ -99,7 +98,6 @@ export default async function Page({ params }) {
           </div>
         )}
       </div>
-      <ReviewsForm />
     </div>
   );
 }
