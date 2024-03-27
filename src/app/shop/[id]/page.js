@@ -2,21 +2,35 @@
 import { sql } from "@vercel/postgres";
 import Image from "next/image";
 import productsArray from "../../SCproducts.json";
-import { FaStar, FaStarHalfAlt } from 'react-icons/fa'
 
+import { FaStar, FaStarHalfAlt } from 'react-icons/fa'
+import { GetProductReviews } from "@/app/components/products-sql";
+import { SignedIn } from "@clerk/nextjs";
 
 export default async function Page({ params }) {
+  // console.log"params.id);
+  // console.log(products);
+  // if (!product) {
+  //   return (
+  //     <div>
+  //       <p> No product found </p>
+  //     </div>
+  //   );
+  // }
+  //when product found
+  // const products = JSON.parse(productsArray);
 
   const postId = params.id;
   const product = productsArray.find(
     (product) => product.product_id === parseInt(postId)
   );
   console.log(product);
-  
-    const reviews = await sql`
+
+  const reviews = await sql`
     SELECT * 
     FROM reviews 
     WHERE product_id = ${postId}`;
+
     
     console.log(reviews);
     
@@ -29,6 +43,7 @@ export default async function Page({ params }) {
           <div>
             <p className="text-lg font-bold text-gray-800">£{product.product_price}</p>
           </div>
+          <SignedIn>
           <button
             className="text-sm font-semibold px-4 py-2 bg-[#AAE292] rounded-full hover:bg-gray-300 focus:outline-none focus:ring focus:ring-gray-400 snipcart-add-item"
             data-item-id={product.product_id}
@@ -38,6 +53,7 @@ export default async function Page({ params }) {
           >
             Add to Cart
           </button>
+          </SignedIn>
         </div>
         {reviews.rows.length > 0 && (
           <div className="mt-4">
@@ -66,3 +82,6 @@ export default async function Page({ params }) {
       </div>
     );
 }
+
+
+  

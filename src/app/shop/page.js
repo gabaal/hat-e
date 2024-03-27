@@ -4,8 +4,9 @@ import { useState } from 'react';
 import products from "../SCproducts.json";
 import Link from "next/link";
 import Image from "next/image";
-import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 
+import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import { SignedIn } from "@clerk/nextjs";
 export default function Page() {
   const [sortOption, setSortOption] = useState(null);
   const [isDescending, setIsDescending] = useState(true);
@@ -36,6 +37,7 @@ export default function Page() {
       setSortOption(option);
     }
   };
+
 
   return (
     <div>
@@ -73,6 +75,7 @@ export default function Page() {
                 <p className="mt-2 text-lg text-gray-600">
                   {product.product_description}
                 </p>
+
                 <Link href={`shop/${product.product_id}`}>
                   <img
                     className="object-cover object-center h-70 w-70"
@@ -97,6 +100,7 @@ export default function Page() {
                     </div>
                   )}
                 </div>
+                <SignedIn>
                 <button
                   className="text-sm font-semibold px-4 py-2 bg-[#AAE292] rounded-full hover:bg-gray-300 focus:outline-none focus:ring focus:ring-gray-400 snipcart-add-item"
                   data-item-id={product.product_id}
@@ -106,6 +110,8 @@ export default function Page() {
                 >
                   Add to Cart
                 </button>
+                </SignedIn>
+
               </div>
             </div>
           </div>
