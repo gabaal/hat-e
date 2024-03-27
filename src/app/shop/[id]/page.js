@@ -55,6 +55,7 @@ export default async function Page({ params }) {
     </>
   )}
 </div>
-    </div>
+
+</div>
   );
 }
