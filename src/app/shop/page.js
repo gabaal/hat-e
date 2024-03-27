@@ -1,5 +1,6 @@
 'use client'
 
+import { GetProductsAndReviewsAvg } from '../components/products-sql';
 import { useState } from 'react';
 import products from "../SCproducts.json";
 import Link from "next/link";
@@ -8,6 +9,7 @@ import Image from "next/image";
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { SignedIn } from "@clerk/nextjs";
 export default function Page() {
+  GetProductsAndReviewsAvg();
   const [sortOption, setSortOption] = useState(null);
   const [isDescending, setIsDescending] = useState(true);
 
