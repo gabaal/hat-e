@@ -1,29 +1,50 @@
+'use client'
+
+import { useState } from 'react';
 import products from "../SCproducts.json";
-import productJSON from "../components/update-products-json";
 import Link from "next/link";
 import Image from "next/image";
 
-export default async function page() {
-  // await productJSON();
-  console.log(products);
+export default function Page() {
+  const [sortOption, setSortOption] = useState(null);
+
+  const sortedProducts = [...products].sort((a, b) => {
+    switch (sortOption) {
+      case 'price':
+        return a.product_price - b.product_price;
+      case 'name':
+        return a.product_name.localeCompare(b.product_name);
+      case 'review':
+        return b.average_rating - a.average_rating;
+      default:
+        return 0;
+    }
+  });
+
   return (
-    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      <div className="flex flex-col items-center">
-        <h1 className="mt-4 mb-8 text-3xl font-semibold text-gray-800">
-          The Hat-e Shop
-        </h1>
-        <div className="flex justify-center mt-14">
-          <Image
-            className="rounded-lg"
-            src="/WhiteBgLogo.png"
-            height={250}
-            width={250}
-            alt="Logo for Hat brand"
-          />
-        </div>
+    <div>
+      <div className="flex justify-center mt-4">
+        <button
+          className="mr-4 bg-gray-200 px-4 py-2 rounded-md"
+          onClick={() => setSortOption('price')}
+        >
+          Sort by Price
+        </button>
+        <button
+          className="mr-4 bg-gray-200 px-4 py-2 rounded-md"
+          onClick={() => setSortOption('name')}
+        >
+          Sort by Name
+        </button>
+        <button
+          className="bg-gray-200 px-4 py-2 rounded-md"
+          onClick={() => setSortOption('review')}
+        >
+          Sort by Review
+        </button>
       </div>
-      {products.map((product) => {
-        return (
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {sortedProducts.map((product) => (
           <div
             key={product.product_id}
             className="max-w-md mx-auto bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden hover:shadow-lg dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
@@ -42,7 +63,6 @@ export default async function page() {
                   alt={product.product_name}
                 />
               </Link>
-
               <p className="mt-4 text-lg font-bold text-gray-800">
                 £{product.product_price}
               </p>
@@ -50,7 +70,6 @@ export default async function page() {
                 <p className="mr-2">
                   Avg Customer Review {product.average_rating}
                 </p>
-
                 <button
                   className="text-sm font-semibold px-3 py-1 bg-[#AAE292] rounded-full hover:bg-gray-300 focus:outline-none focus:ring focus:ring-gray-400 snipcart-add-item"
                   data-item-id={product.product_id}
@@ -63,8 +82,8 @@ export default async function page() {
               </div>
             </div>
           </div>
-        );
-      })}
+        ))}
+      </div>
     </div>
   );
 }
