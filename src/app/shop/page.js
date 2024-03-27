@@ -2,6 +2,7 @@ import products from "../SCproducts.json";
 import productJSON from "../components/update-products-json";
 import Link from "next/link";
 import Image from "next/image";
+import { SignedIn } from "@clerk/nextjs";
 
 export default async function page() {
   // await productJSON();
@@ -50,16 +51,17 @@ export default async function page() {
                 <p className="mr-2">
                   Avg Customer Review {product.average_rating}
                 </p>
-
-                <button
-                  className="text-sm font-semibold px-3 py-1 bg-[#AAE292] rounded-full hover:bg-gray-300 focus:outline-none focus:ring focus:ring-gray-400 snipcart-add-item"
-                  data-item-id={product.product_id}
-                  data-item-image={product.product_image_url}
-                  data-item-name={product.product_name}
-                  data-item-price={product.product_price}
-                >
-                  Add to Cart
-                </button>
+                <SignedIn>
+                  <button
+                    className="text-sm font-semibold px-3 py-1 bg-[#AAE292] rounded-full hover:bg-gray-300 focus:outline-none focus:ring focus:ring-gray-400 snipcart-add-item"
+                    data-item-id={product.product_id}
+                    data-item-image={product.product_image_url}
+                    data-item-name={product.product_name}
+                    data-item-price={product.product_price}
+                  >
+                    Add to Cart
+                  </button>
+                </SignedIn>
               </div>
             </div>
           </div>
