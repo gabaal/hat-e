@@ -27,7 +27,7 @@
 // }
 import { sql } from "@vercel/postgres";
 import Image from "next/image";
-import productsArray from "@/../products.json";
+import productsArray from "../../SCproducts.json";
 export default async function Page({ params }) {
   // console.log"params.id);
   // console.log(products);
@@ -48,22 +48,22 @@ export default async function Page({ params }) {
 
   return (
     <div className="max-w-sm mx-auto p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-      <h1 className="text-2xl font-semibold">{product.name}</h1>
-      <p className="mt-2 text-m text-gray-600">{product.description}</p>
+      <h1 className="text-2xl font-semibold">{product.product_name}</h1>
+      <p className="mt-2 text-m text-gray-600">{product.product_description}</p>
       <Image className="mt-4"
-        src={product.image_url}
-        alt={product.name}
+        src={product.product_image_url}
+        alt={product.product_name}
         width={500}
         height={100}
       />
-      <p className="mt-4 text-lg font-bold text-gray-800">${product.price}</p>
+      <p className="mt-4 text-lg font-bold text-gray-800">£{product.product_price}</p>
       <p>
         <button
           className="hover:text-gray-900 hover:shadow-md rounded-md px-4 py-2 bg-[#AAE292] text-black hover:bg-gray-300 snipcart-add-item"
           data-item-id={product.product_id}
-          data-item-image={product.image_url}
-          data-item-name={product.name}
-          data-item-price={product.price}
+          data-item-image={product.product_image_url}
+          data-item-name={product.product_name}
+          data-item-price={product.product_price}
         >
           Add to Cart
         </button>
