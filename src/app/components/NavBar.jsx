@@ -42,9 +42,7 @@ export default function Navbar() {
             >
               Contact Us
             </Link>
-            <div className="hover:text-gray-900 hover:shadow-md rounded-md px-4 py-2 bg-blue-500 hover:bg-gray-300">
-              {userId ? <UserButton /> : <SignInButton />}
-            </div>
+            <div>{userId ? <UserButton /> : <SignInButton />}</div>
           </div>
         </div>
       </nav>
