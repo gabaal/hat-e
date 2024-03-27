@@ -1,5 +1,6 @@
 import products from "../SCproducts.json";
 import productJSON from "../components/update-products-json";
+import Link from "next/link";
 
 export default function page() {
   productJSON();
@@ -17,7 +18,9 @@ export default function page() {
             
             <h3>{product.product_name}</h3>
             <p>{product.product_description}</p>
+            <Link href={`shop/${product.product_id}`}>
             <img src={product.product_image_url} height={400} width={300} />
+            </Link>
             <p>£{product.product_price}</p>
             <p>Avg Customer Review {product.average_rating}</p>
             <p>
