@@ -52,7 +52,7 @@ export default async function page() {
                 </p>
 
                 <button
-                  className="text-sm font-semibold px-3 py-1 bg-[#AAE292] rounded-full hover:bg-gray-300 focus:outline-none focus:ring focus:ring-gray-400"
+                  className="text-sm font-semibold px-3 py-1 bg-[#AAE292] rounded-full hover:bg-gray-300 focus:outline-none focus:ring focus:ring-gray-400 snipcart-add-item"
                   data-item-id={product.product_id}
                   data-item-image={product.product_image_url}
                   data-item-name={product.product_name}
