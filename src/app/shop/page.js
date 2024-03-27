@@ -7,7 +7,7 @@ export default async function page() {
   console.log(products);
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      <h1>The Shop</h1>
+      <h1 className="mt-4 text-3xl text-gray-800">The Hat-e Shop</h1>
       {products.map((product) => {
         
         return (
@@ -21,6 +21,7 @@ export default async function page() {
             <Link href={`shop/${product.product_id}`}>
             <img className="mt-4" src={product.product_image_url} height={400}  />
             </Link>
+            
             <p className="mt-4 text-lg font-bold text-gray-800">£{product.product_price}</p>
             <p>Avg Customer Review {product.average_rating}</p>
             <p>
@@ -37,6 +38,7 @@ export default async function page() {
               </p>
             </p>
           </div>
+          
         );
       })}
     </div>
