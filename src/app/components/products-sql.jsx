@@ -55,7 +55,7 @@ FROM
   reviews
 WHERE 
   product_id = ${params.id}`;
-  console.log(productReviews);
+  // console.log(productReviews);
   return productReviews;
 }
 
