@@ -28,7 +28,11 @@
 import { sql } from "@vercel/postgres";
 import Image from "next/image";
 import productsArray from "../../SCproducts.json";
+import { GetProductReviews } from "@/app/components/products-sql";
+
+
 export default async function Page({ params }) {
+  
   // console.log"params.id);
   // console.log(products);
   // if (!product) {
@@ -45,7 +49,14 @@ export default async function Page({ params }) {
     (product) => product.product_id === parseInt(postId)
   );
   console.log(product);
-
+  
+    const reviews = await sql`
+    SELECT * 
+    FROM reviews 
+    WHERE product_id = ${postId}`;
+    
+    console.log(reviews);
+    
   return (
     <div className="max-w-sm mx-auto p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
       <h1 className="text-2xl font-semibold">{product.product_name}</h1>
@@ -67,7 +78,18 @@ export default async function Page({ params }) {
         >
           Add to Cart
         </button>
-      </p>
+        </p>
+      <div className="mt-4">
+        {reviews.length > 0 && (
+          <h3>Reviews</h3>
+        )}
+        <h3>Reviews</h3>
+        {reviews.rows.map((review) => (
+          <p key={review.review_id}>
+            {review.rating} - {review.comment}
+          </p>
+        ))}
+      </div>
     </div>
   );
 }
