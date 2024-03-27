@@ -22,7 +22,7 @@ export default function Navbar() {
               />
             </Link>
           </div>
-          <div className="hidden md:flex items-center space-x-6 ml-auto transition-all duration-500 ease-in-out">
+          <div className="flex items-center space-x-6 ml-auto transition-all duration-500 ease-in-out">
             <Link
               href="/about-us"
               className="hover:text-gray-900 hover:shadow-md rounded-md px-4 py-2 bg-[#AAE292] text-black hover:bg-gray-300"
@@ -35,20 +35,6 @@ export default function Navbar() {
               className="hover:text-gray-900 hover:shadow-md rounded-md px-4 py-2 bg-[#AAE292] text-black hover:bg-gray-300"
             >
               All hats
-            </Link>
-
-            <Link
-              href="/shop/caps"
-              className="hover:text-gray-900 hover:shadow-md rounded-md px-4 py-2 bg-[#AAE292] text-black hover:bg-gray-300"
-            >
-              Caps
-            </Link>
-
-            <Link
-              href="/shop/other-hats"
-              className="hover:text-gray-900 hover:shadow-md rounded-md px-4 py-2 bg-[#AAE292] text-black hover:bg-gray-300"
-            >
-              Beanies
             </Link>
             <div className="hover:text-gray-900 hover:shadow-md rounded-md px-4 py-2 bg-blue-500 hover:bg-gray-300">
               {userId ? <UserButton /> : <SignInButton />}
