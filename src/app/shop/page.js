@@ -1,16 +1,31 @@
 import products from "../SCproducts.json";
 import productJSON from "../components/update-products-json";
 import Link from "next/link";
+import Image from "next/image";
 
 export default async function Page() {
   await productJSON();
   console.log(products);
   
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      <h1 className="mt-4 text-3xl text-gray-800">The Hat-e Shop</h1>
+    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="flex flex-col items-center">
+        <h1 className="mt-4 mb-8 text-3xl font-semibold text-gray-800">
+          The Hat-e Shop
+        </h1>
+        <div className="flex justify-center mt-14">
+          <Image
+            className="rounded-lg"
+            src="/WhiteBgLogo.png"
+            height={250}
+            width={250}
+            alt="Logo for Hat brand"
+          />
+        </div>
+      </div>
       {products.map((product) => {
         return (
+
           <div key={product.product_id} className="max-w-sm mx-auto p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 flex flex-col justify-between">
             <div>
               <h3 className="text-lg font-semibold">{product.product_name}</h3>
@@ -35,6 +50,7 @@ export default async function Page() {
               >
                 Add to Cart 
               </button>
+
             </div>
           </div>
         );
