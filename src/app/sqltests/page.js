@@ -23,15 +23,8 @@
 //   );
 // }
 import { GetProductsAndReviewsAvg } from "../components/products-sql";
-
+import NewMessage from "../message/page";
 export default async function Home() {
-  const products = await GetProductsAndReviewsAvg();
-  console.log(products);
-  return (
-    <main>
-      <div>
-        <h1>Hat-E home page</h1>
-      </div>
-    </main>
-  );
+  return(NewMessage())
+  
 }

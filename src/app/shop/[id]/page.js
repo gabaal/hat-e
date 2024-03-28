@@ -1,7 +1,9 @@
 import { sql } from "@vercel/postgres";
 import Image from "next/image";
 import productsArray from "../../SCproducts.json";
-
+import NewMessage from "../../message/page";
+import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache"
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { GetProductReviews } from "@/app/components/products-sql";
 import { SignedIn } from "@clerk/nextjs";
@@ -14,12 +16,23 @@ export default async function Page({ params }) {
     (product) => product.product_id === parseInt(postId)
   );
   console.log(product);
-
-  // export function props() {
-  //   return (
-  //     const formId = ${postId}
-  //   )
-  // }
+  async function handleSaveMessage (formData) {
+    'use server'
+    
+    const product_id = postId
+    const rating = formData.get('rating')
+    const comment = formData.get('comment')
+    
+    console.log(product_id, rating, comment)
+    await sql`
+      INSERT INTO reviews
+        (product_id, rating, comment)
+        VALUES (${product_id}, ${rating}, ${comment})`
+        
+      revalidatePath(`/shop/${postId}`)
+      // redirect("/shop/${postId}")
+   }
+ 
   const reviews = await sql`
     SELECT * 
     FROM reviews 
@@ -98,6 +111,46 @@ export default async function Page({ params }) {
           </div>
         )}
       </div>
+      <h1 className="text-2xl mb-4 text-center mt-4">Leave a review</h1>
+      <form action={handleSaveMessage} className="max-w-md mx-auto">
+        
+      <label className="block mb-2" htmlFor="rating">
+        rating
+      </label>
+      <select
+  id="rating"
+  name="rating"
+  className="w-full border border-gray-300 rounded-md py-2 px-3 mb-3"
+  required
+>
+  <option value="">Select rating</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+      
+      <label className="block mb-2" htmlFor="comment">
+        Comment
+      </label>
+      <textarea
+        id="comment"
+        name="comment"
+        className="w-full border border-gray-300 rounded-md py-2 px-3 mb-3"
+        required
+      ></textarea>
+      <div className="text-center">
+        <button
+          type="submit"
+          className="bg-[#AAE292] hover:bg-green-700 text-black font-bold py-2 px-4 rounded"
+        >
+          Send
+        </button>
+      </div>
+        
+        </form>
+      
     </div>
   );
 }
