@@ -1,18 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Hat-e App
 
-First, run the development server:
+# User Stories
+[x] As a user I want to view all products
+As a user I want to click a product which will take me to a single product page
+As a user I want to be able to add a product to my cart
+As a user I want an about me page
+As a user I want to be able to sort the products by price, name etc
+As a user I want to be able to edit my products when it the shopping cart
+As a user I want to be able to add a review to a product
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
