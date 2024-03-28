@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import { GetProductsAndReviewsAvg } from '../components/products-sql';
-import { useState } from 'react';
+import { GetProductsAndReviewsAvg } from "../components/products-sql";
+import { useState } from "react";
 import products from "../SCproducts.json";
 import Link from "next/link";
 import Image from "next/image";
 
-import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { SignedIn } from "@clerk/nextjs";
 export default function Page() {
   GetProductsAndReviewsAvg();
@@ -16,13 +16,13 @@ export default function Page() {
   const sortedProducts = [...products].sort((a, b) => {
     let comparison = 0;
     switch (sortOption) {
-      case 'price':
+      case "price":
         comparison = a.product_price - b.product_price;
         break;
-      case 'name':
+      case "name":
         comparison = a.product_name.localeCompare(b.product_name);
         break;
-      case 'review':
+      case "review":
         comparison = b.average_rating - a.average_rating;
         break;
       default:
@@ -40,25 +40,24 @@ export default function Page() {
     }
   };
 
-
   return (
     <div>
       <div className="flex justify-center mt-4 mb-4 space-x-4">
         <button
           className="text-sm font-semibold px-4 py-2 bg-[#AAE292] rounded-full hover:bg-gray-300 focus:outline-none focus:ring focus:ring-gray-400"
-          onClick={() => handleSortOptionChange('price')}
+          onClick={() => handleSortOptionChange("price")}
         >
           Sort by Price
         </button>
         <button
           className="text-sm font-semibold px-4 py-2 bg-[#AAE292] rounded-full hover:bg-gray-300 focus:outline-none focus:ring focus:ring-gray-400"
-          onClick={() => handleSortOptionChange('name')}
+          onClick={() => handleSortOptionChange("name")}
         >
           Sort by Name
         </button>
         <button
           className="text-sm font-semibold px-4 py-2 bg-[#AAE292] rounded-full hover:bg-gray-300 focus:outline-none focus:ring focus:ring-gray-400"
-          onClick={() => handleSortOptionChange('review')}
+          onClick={() => handleSortOptionChange("review")}
         >
           Sort by Review
         </button>
@@ -89,31 +88,38 @@ export default function Page() {
               <div className="flex justify-between items-center mt-4">
                 <div>
                   <p className="mt-4 text-lg font-bold text-gray-800">
-                    £{product.product_price}
+                    ${product.product_price}
                   </p>
                   {product.average_rating !== "0.0" && (
                     <div className="flex items-center mt-2">
                       <p>Average Reviews:</p>
-                      {Array.from({ length: Math.floor(Number(product.average_rating)) }, (_, index) => (
-                        <FaStar key={index} className="text-yellow-500 ml-2" />
-                      ))}
-                      {product.average_rating % 1 !== 0 && <FaStarHalfAlt className="text-yellow-500" />}
+                      {Array.from(
+                        { length: Math.floor(Number(product.average_rating)) },
+                        (_, index) => (
+                          <FaStar
+                            key={index}
+                            className="text-yellow-500 ml-2"
+                          />
+                        )
+                      )}
+                      {product.average_rating % 1 !== 0 && (
+                        <FaStarHalfAlt className="text-yellow-500" />
+                      )}
                       <span className="ml-2">{product.average_rating}</span>
                     </div>
                   )}
                 </div>
                 <SignedIn>
-                <button
-                  className="text-sm font-semibold px-4 py-2 bg-[#AAE292] rounded-full hover:bg-gray-300 focus:outline-none focus:ring focus:ring-gray-400 snipcart-add-item"
-                  data-item-id={product.product_id}
-                  data-item-image={product.product_image_url}
-                  data-item-name={product.product_name}
-                  data-item-price={product.product_price}
-                >
-                  Add to Cart
-                </button>
+                  <button
+                    className="text-sm font-semibold px-4 py-2 bg-[#AAE292] rounded-full hover:bg-gray-300 focus:outline-none focus:ring focus:ring-gray-400 snipcart-add-item"
+                    data-item-id={product.product_id}
+                    data-item-image={product.product_image_url}
+                    data-item-name={product.product_name}
+                    data-item-price={product.product_price}
+                  >
+                    Add to Cart
+                  </button>
                 </SignedIn>
-
               </div>
             </div>
           </div>
@@ -121,4 +127,4 @@ export default function Page() {
       </div>
     </div>
   );
-}  
+}
